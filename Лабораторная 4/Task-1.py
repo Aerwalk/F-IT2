@@ -1,86 +1,89 @@
-if __name__ == "__main__":
-    class Животное:
-        """Базовый класс, представляющий животных."""
+python
+class Animal:
+    """Базовый класс, представляющий животных."""
 
-        def __init__(self, вид: str, звук: str):
-            self._вид = вид  # Вид животного
-            self._звук = звук  # Звук, издаваемый животным
+    def __init__(self, species: str, sound: str):
+        self._species = species  # Species of the animal
+        self._sound = sound  # Sound the animal makes
 
-        def сделать_звук(self) -> str:
-            """
-            Издать характерный звук животного.
+    def make_sound(self) -> str:
+        """
+        Издать характерный звук животного.
 
-            Returns:
-            str: Звук, издаваемый животным.
-            """
-            return self._звук
+        Returns:
+        str: Звук, издаваемый животным.
+        """
+        return self._sound
 
-        def получить_вид(self) -> str:
-            """
-            Получить вид животного.
+    def get_species(self) -> str:
+        """
+        Получить вид животного.
 
-            Returns:
-            str: Вид животного.
-            """
-            return self._вид
+        Returns:
+        str: Вид животного.
+        """
+        return self._species
 
-        def __str__(self) -> str:
-            return f"Животное {self._вид}"
+    def __str__(self) -> str:
+        return f"Животное {self._species}"
 
-        def __repr__(self) -> str:
-            return f"{self.__class__.__name__}({self._вид}, {self._звук})"
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}({self._species}, {self._sound})"
 
 
-    class Собака(Животное):
-        """Производный класс, представляющий собак."""
+class Dog(Animal):
+    """Производный класс, представляющий собак."""
 
-        def __init__(self, вид: str, звук: str, порода: str):
-            super().__init__(вид, звук)
-            self._порода = порода  # Порода собаки
+    def __init__(self, species: str, sound: str, breed: str):
+        super().__init__(species, sound)
+        self._breed = breed  # Breed of the dog
 
-        def сделать_звук(self) -> str:
-            """
+    def make_sound(self) -> str:
+       """
             Издать характерный звук собаки.
 
             Returns:
             str: Звук, издаваемый собакой.
             """
-            return "Гав! Гав!"
+        return "Гав! Гав!"
 
-        def __str__(self) -> str:
-            return f"Собака породы {self._порода} {self._вид}"
+    def __str__(self) -> str:
+        return f"Собака породы {self._breed} {self._species}"
 
-        def __repr__(self) -> str:
-            return f"{self.__class__.__name__}({self._вид}, {self._звук}, {self._порода})"
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}({self._species}, {self._sound}, {self._breed})"
 
 
-    class Кошка(Животное):
-        """Производный класс, представляющий кошек."""
+class Cat(Animal):
+    """Производный класс, представляющий кошек."""
 
-        def __init__(self, вид: str, звук: str, окрас: str):
-            super().__init__(вид, звук)
-            self._окрас = окрас  # Окрас кошки
+    def __init__(self, species: str, sound: str, color: str):
+        super().__init__(species, sound)
+        self._color = color  # Color of the cat
 
-        def получить_окрас(self) -> str:
-            """
+    def get_color(self) -> str:
+        """
             Получить окрас кошки.
 
             Returns:
             str: Окрас кошки.
-            """
-            return self._окрас
+        """
+        return self._color
 
-        def сделать_звук(self) -> str:
-            """
+    def make_sound(self) -> str:
+        """
             Издать характерный звук кошки.
 
             Returns:
             str: Звук, издаваемый кошкой.
-            """
-            return "Мяу!"
+        """
+        return "Мяу!"
 
-        def __str__(self) -> str:
-            return f"Кошка окраса {self._окрас} {self._вид}"
+    def __str__(self) -> str:
+        return f"Кошка окраса  {self._color} {self._species}"
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}({self._species}, {self._sound}, {self._color})"
 
         def __repr__(self) -> str:
             return f"{self.__class__.__name__}({self._вид}, {self._звук}, {self._окрас})"
