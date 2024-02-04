@@ -82,8 +82,4 @@ class Cat(Animal):
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self._species}, {self._sound}, {self._color})"
 
-    def __repr__(self) -> str:
-        return f"{self.__class__.__name__}({self._вид}, {self._звук}, {self._окрас})"
-
-    pass
     pass
